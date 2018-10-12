@@ -25,14 +25,15 @@ namespace Equipos_de_Futbol
             BocaJuniors.Estadio = "Alberto J. Armando";
             BocaJuniors.AnoNacimiento = 1905;
             BocaJuniors.Refer = new List<string>() { "F. Gago", "D. Benedeto", "M. Zarate" };
-            
-                     
+
+
+            var a = 1;
             List<Equipo> participantes = new List<Equipo>() { RiverPlate, BocaJuniors};
             int c = 1;
             foreach (var participante in participantes)
             {
                 Console.WriteLine(c+" - "+participante.Nombre);
-                c += 1; //Ver porque no funciona esto
+                c += 1;
             }
             Console.ReadKey();
                 
