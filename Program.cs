@@ -28,9 +28,9 @@ namespace Equipos_de_Futbol
             
                      
             List<Equipo> participantes = new List<Equipo>() { RiverPlate, BocaJuniors};
+            int c = 1;
             foreach (var participante in participantes)
             {
-                int c = 1;
                 Console.WriteLine(c+" - "+participante.Nombre);
                 c += 1; //Ver porque no funciona esto
             }
