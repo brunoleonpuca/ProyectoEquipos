@@ -8,8 +8,9 @@ namespace Equipos_de_Futbol
 {
     interface IClub
     {
-        //Interfaces generan cosas genericas. "Profesion" seria la interfaz
+        //Interfaces instancian cosas genericas. "Profesion" seria la interfaz
         //"Abogado" o "Medico" seria una clase de esa interfaz
+       
 
         string Nombre { get; set; }
         string Estadio { get; set; }
@@ -18,7 +19,6 @@ namespace Equipos_de_Futbol
         int AnoNacimiento { get; set; }
         char Division { get; set; }
         List<string> Refer { get; set; }
-        void VenderJugador();
         int Antiguedad(int anoActual);
     }
 }

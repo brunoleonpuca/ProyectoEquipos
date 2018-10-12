@@ -43,13 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFA.cs" />
     <Compile Include="Equipo.cs" />
     <Compile Include="IClub.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Equipos\Platense.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Equipos\River.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
