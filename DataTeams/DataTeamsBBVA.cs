@@ -17,7 +17,7 @@ namespace Equipos_de_Futbol
             RealMadrid.Division = 'A';
             RealMadrid.DirectorTecnico = "Julen Lopetegui";
             RealMadrid.Capitan = "Sergio Ramos";
-            RealMadrid.Estadio = "Estadio Santiago Bernabéu";
+            RealMadrid.Estadio = "Santiago Bernabéu";
             RealMadrid.AnoNacimiento = 1902;
             RealMadrid.Refer = new List<string>() { "Marcelo", "T. Kroos", "G. Bale" };
 

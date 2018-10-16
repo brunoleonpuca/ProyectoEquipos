@@ -28,6 +28,8 @@ namespace Equipos_de_Futbol
 
             BBVA.Nombre = "BBVA";
             BBVA.TeamsQuantity = new DataTeamsBBVA().FetchBBVATeams().Count;
+
+
             List<Ligas> ligas = new List<Ligas>
             {
                 AFA,

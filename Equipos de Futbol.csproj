@@ -46,8 +46,8 @@
     <Compile Include="DataTeams\DataTeamsAFA.cs" />
     <Compile Include="DataTeams\DataTeamsBBVA.cs" />
     <Compile Include="Equipos.cs" />
-    <Compile Include="IClub.cs" />
-    <Compile Include="ILeague.cs" />
+    <Compile Include="Interfaces\IClub.cs" />
+    <Compile Include="Interfaces\ILeague.cs" />
     <Compile Include="Ligas.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Equipos_de_Futbol
 {
-    class DataTeamsAFA
+    class DataTeamsAFA : Ligas
     {
 
 
@@ -11,7 +11,10 @@ namespace Equipos_de_Futbol
         Equipos BocaJuniors = new Equipos();
         Equipos Independiente = new Equipos();
 
-        
+
+
+        //Equipos Independiente = new Equipos(); Asi agregamos los objetos de la clase y dsp ponemos propiedades
+
 
         public DataTeamsAFA()
         {

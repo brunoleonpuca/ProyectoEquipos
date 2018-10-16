@@ -8,6 +8,8 @@ namespace Equipos_de_Futbol
 {
     class Menu
     {
+
+        Ligas leagues;
         List<Equipos> team;
         Ligas ligas = new Ligas();
         //1)Un foreach que recorra el listado de objetos e imprima los titulos de los equipos
@@ -27,7 +29,7 @@ namespace Equipos_de_Futbol
         public void LeagueSelection()
         {
 
-            var league = ligas.AddTeams();
+            List<Ligas> league = ligas.AddTeams();
             int leagueDecision = 0;
             int leagueCounter = 1;
             foreach (var leagues in league)
@@ -52,11 +54,11 @@ namespace Equipos_de_Futbol
                     switch (leagueDecision)
                     {
                         case 1: //AFA SELECTION
-                            var leagues = league[leagueDecision];
+                            leagues = league[leagueDecision-1];
                             team = new DataTeamsAFA().FetchAFATeams();
                             break;
                         case 2: //BBVA SELECTION
-                            leagues = league[leagueDecision];
+                            leagues = league[leagueDecision-1];
                             team = new DataTeamsBBVA().FetchBBVATeams();
                             break;
                         default:
