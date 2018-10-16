@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Equipos_de_Futbol
 {
-    class DataTeamsAFA
+    class DataTeamsAFA : Ligas
     {
 
 

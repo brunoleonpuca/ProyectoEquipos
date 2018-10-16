@@ -9,7 +9,7 @@ namespace Equipos_de_Futbol
         {
             
             Menu menu = new Menu();
-            int leagueSelection = menu.LeagueSelection();
+            menu.LeagueSelection();
             menu.MostrarMenu();
             int teamChoose = menu.VerifyValue();
             menu.ShowTeam(teamChoose);

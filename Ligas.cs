@@ -11,22 +11,23 @@ namespace Equipos_de_Futbol
 
         public string Nombre { get; set; }
         public int TeamsQuantity { get; set; }
-        Ligas AFA = new Ligas();
-        Ligas BBVA = new Ligas();
+
 
         public Ligas()
         {
+
+        }
+
+        public List<Ligas> AddTeams()
+        {
+            Ligas AFA = new Ligas();
+            Ligas BBVA = new Ligas();
 
             AFA.Nombre = "AFA";
             AFA.TeamsQuantity = new DataTeamsAFA().FetchAFATeams().Count;
 
             BBVA.Nombre = "BBVA";
             BBVA.TeamsQuantity = new DataTeamsBBVA().FetchBBVATeams().Count;
-
-        }
-
-        public List<Ligas> AddTeams()
-        {
             List<Ligas> ligas = new List<Ligas>
             {
                 AFA,

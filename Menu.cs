@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Equipos_de_Futbol
 {
-    class Menu 
+    class Menu
     {
+        List<Equipos> team;
+        Ligas ligas = new Ligas();
         //1)Un foreach que recorra el listado de objetos e imprima los titulos de los equipos
         //2)Usuario ingresa valor de acorde al lenght de ese listado
         //3)Verificar valor de dato ingresado, si True mostrar propiedades, si False: Advertencia
@@ -22,22 +24,22 @@ namespace Equipos_de_Futbol
 
         }
 
-        public int LeagueSelection()
+        public void LeagueSelection()
         {
-            var league = new Ligas().AddTeams();
 
-            int leagueSelection = 0;
+            var league = ligas.AddTeams();
             int leagueDecision = 0;
             int leagueCounter = 1;
             foreach (var leagues in league)
             {
                 Console.WriteLine(leagueCounter + " - " + leagues.Nombre);
+                Console.WriteLine(leagues.TeamsQuantity + " equipos disponibles\n");
                 leagueCounter++;
             }
-            while (leagueSelection == 0)
+            while (leagueDecision == 0)
             {
-                //Regex r = new Regex("^[a-zA-Z]*$");
-
+                //Regex r = new Regex("^[a-zA-Z]*$"); Libreria para validar datos
+                //Habria que llamar a 'r' y con un If validar los datos 
                 Console.WriteLine("Elija Liga ingresando valor y confirme presionando Enter");
                 leagueDecision = Convert.ToInt32(Console.ReadLine());
                 if (leagueDecision > league.Count || leagueDecision < 0)
@@ -45,23 +47,38 @@ namespace Equipos_de_Futbol
                     Console.WriteLine("Dato ingresado no valido");
                     leagueDecision = 0;
                 }
-
-            }return leagueDecision;
+                else
+                {
+                    switch (leagueDecision)
+                    {
+                        case 1: //AFA SELECTION
+                            var leagues = league[leagueDecision];
+                            team = new DataTeamsAFA().FetchAFATeams();
+                            break;
+                        case 2: //BBVA SELECTION
+                            leagues = league[leagueDecision];
+                            team = new DataTeamsBBVA().FetchBBVATeams();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
         }
 
         public void MostrarMenu()
         {
-
             int teamCounter = 1;
-            foreach (var team in FetchTeams())
+            foreach (var teams in team)
             {
-                Console.WriteLine(teamCounter + " - " + team.Nombre);
+                Console.WriteLine(teamCounter + " - " + teams.Nombre);
                 teamCounter++;
             }
         }
+
+
         public int VerifyValue()
         {
-
             int teamDecision = 0;
             while (teamDecision == 0)
             {
@@ -73,12 +90,11 @@ namespace Equipos_de_Futbol
                     teamDecision = 0;
                 }
             }
-            return teamDecision-1;
+            return teamDecision - 1;
         }
 
         public void ShowTeam(int teamDecision)
         {
-            List<Equipos> team = FetchTeams();
             for (int i = 0; i < team.Count; i++)
             {
                 Console.WriteLine("Nombre: " + team[teamDecision].Nombre);
@@ -93,13 +109,13 @@ namespace Equipos_de_Futbol
                     Console.WriteLine("Referente: " + referPlayers + " :" + team[teamDecision].Refer[z]);
                     referPlayers++;
                 }
-                
+
                 Console.ReadKey();
 
             }
         }
 
-        
+
 
 
     }
