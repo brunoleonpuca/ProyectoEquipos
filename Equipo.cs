@@ -34,6 +34,7 @@ namespace Equipos_de_Futbol
         public char Division { get; set; }
 
         public List<string> Refer { get; set; }
+   
 
         public Equipo()
         {

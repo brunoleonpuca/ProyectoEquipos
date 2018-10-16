@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AFA.cs" />
-    <Compile Include="Equipo.cs" />
+    <Compile Include="DataTeams\DataTeamsAFA.cs" />
+    <Compile Include="DataTeams\DataTeamsBBVA.cs" />
+    <Compile Include="Equipos.cs" />
     <Compile Include="IClub.cs" />
+    <Compile Include="ILeague.cs" />
+    <Compile Include="Ligas.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

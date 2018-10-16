@@ -7,12 +7,18 @@ namespace Equipos_de_Futbol
     {
         static void Main(string[] args)
         {
-            AFA teams = new AFA();
-            teams.addTeams = new List<Equipo>();
-            Console.ReadKey();
+            
+            Menu menu = new Menu();
+            int leagueSelection = menu.LeagueSelection();
+            menu.MostrarMenu();
+            int teamChoose = menu.VerifyValue();
+            menu.ShowTeam(teamChoose);
+        
+            
 
 
         }
 
     }
+
 }

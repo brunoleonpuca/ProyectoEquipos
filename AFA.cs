@@ -5,8 +5,10 @@ namespace Equipos_de_Futbol
 {
     class AFA : Equipo
     {
-        public List<Equipo> addTeams;
-        
+
+        List<Equipo> addTeams = new List<Equipo>();
+
+
         public AFA()
         {
             Equipo RiverPlate = new Equipo();
@@ -32,5 +34,5 @@ namespace Equipos_de_Futbol
         }
 
     }
-    
+
 }
