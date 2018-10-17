@@ -54,13 +54,14 @@ namespace Equipos_de_Futbol
                     switch (leagueDecision)
                     {
                         case 1: //AFA SELECTION
-                            leagues = league[leagueDecision-1];
+                            leagues = league[leagueDecision - 1];
                             team = new DataTeamsAFA().FetchAFATeams();
                             break;
                         case 2: //BBVA SELECTION
-                            leagues = league[leagueDecision-1];
+                            leagues = league[leagueDecision - 1];
                             team = new DataTeamsBBVA().FetchBBVATeams();
                             break;
+                        //Agregar con cada liga un 'case' nuevo, es secuencial. En algun momento se puede re-ordenar
                         default:
                             break;
                     }
@@ -71,6 +72,9 @@ namespace Equipos_de_Futbol
         public void MostrarMenu()
         {
             int teamCounter = 1;
+            Console.Clear();
+            Console.WriteLine(leagues.Nombre + " seleccionada");
+            Console.WriteLine(leagues.TeamsQuantity + " equipos almacenados\n");
             foreach (var teams in team)
             {
                 Console.WriteLine(teamCounter + " - " + teams.Nombre);
@@ -97,27 +101,59 @@ namespace Equipos_de_Futbol
 
         public void ShowTeam(int teamDecision)
         {
-            for (int i = 0; i < team.Count; i++)
+
+            Console.WriteLine("Nombre: " + team[teamDecision].Nombre);
+            Console.WriteLine("Estadio: " + team[teamDecision].Estadio);
+            Console.WriteLine("Director Tecnico: " + team[teamDecision].DirectorTecnico);
+            Console.WriteLine("Capitan: " + team[teamDecision].Capitan);
+            Console.WriteLine("Año de Fundacion: " + team[teamDecision].AnoNacimiento);
+            Console.WriteLine("Division Actual: " + team[teamDecision].Division);
+            int referPlayers = 1;
+            for (int z = 0; z < team[teamDecision].Refer.Count; z++)
             {
-                Console.WriteLine("Nombre: " + team[teamDecision].Nombre);
-                Console.WriteLine("Estadio: " + team[teamDecision].Estadio);
-                Console.WriteLine("Director Tecnico: " + team[teamDecision].DirectorTecnico);
-                Console.WriteLine("Capitan: " + team[teamDecision].Capitan);
-                Console.WriteLine("Año de Fundacion: " + team[teamDecision].AnoNacimiento);
-                Console.WriteLine("Division Actual: " + team[teamDecision].Division);
-                int referPlayers = 1;
-                for (int z = 0; z < team[teamDecision].Refer.Count; z++)
-                {
-                    Console.WriteLine("Referente: " + referPlayers + " :" + team[teamDecision].Refer[z]);
-                    referPlayers++;
-                }
-
-                Console.ReadKey();
-
+                Console.WriteLine("Referente: " + referPlayers + " :" + team[teamDecision].Refer[z]);
+                referPlayers++;
             }
+
+            Console.WriteLine("\nPresione Enter cuando desee continuar");
+            Console.ReadKey();
         }
 
+        public int Continue()
+        {
+            int loop = 0;
+            int userSelection = 0;
+            Console.WriteLine("\nQue desea hacer?");
+            Console.WriteLine("1.Elegir otra Liga");
+            Console.WriteLine("2.Elegir otro Equipo");
+            Console.WriteLine("3.Salir");
+            while (userSelection == 0)
+            {
+                userSelection = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                switch (userSelection)
+                {
+                    case 1:
+                        break;
+                    case 2: //Hay que crear una clase Utils para manejar el programa
+                        MostrarMenu();
+                        int teamDecision = VerifyValue();
+                        ShowTeam(teamDecision);
+                        userSelection = 0;
+                        break;
+                    case 3:
+                        loop = 1;
+                        break;
+                    default:
+                        Console.WriteLine("Dato ingresado no valido");
+                        userSelection = 0;
+                        break;
+                }
 
+            }
+
+            return loop;
+        }
 
 
     }

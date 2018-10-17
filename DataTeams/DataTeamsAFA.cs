@@ -10,7 +10,7 @@ namespace Equipos_de_Futbol
         Equipos RiverPlate = new Equipos();
         Equipos BocaJuniors = new Equipos();
         Equipos Independiente = new Equipos();
-
+        Equipos Racing = new Equipos();
         
 
         public DataTeamsAFA()
@@ -40,6 +40,13 @@ namespace Equipos_de_Futbol
             Independiente.AnoNacimiento = 1905;
             Independiente.Refer = new List<string>() { "E. Gigliotti", "M. Benitez", "M. Campaña" };
 
+            Racing.Nombre = "Racing Club";
+            Racing.Division = 'A';
+            Racing.DirectorTecnico = "Eduardo Coudet";
+            Racing.Capitan = "Lisandro Lopez";
+            Racing.Estadio = "Juan Domingo Peron - El Cilindro de Avellaneda";
+            Racing.AnoNacimiento = 1903;
+            Racing.Refer = new List<string>() { "R. Centurion", "L. Sigali", "J. Cristaldo" };
 
         }
 
@@ -50,7 +57,8 @@ namespace Equipos_de_Futbol
             {
                 RiverPlate,
                 BocaJuniors,
-                Independiente
+                Independiente,
+                Racing
             };
 
 
