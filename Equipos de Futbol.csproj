@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DataTeams\DataTeamsAFA.cs" />
     <Compile Include="DataTeams\DataTeamsBBVA.cs" />
+    <Compile Include="DataTeams\DataTeamsPREMIER.cs" />
     <Compile Include="Equipos.cs" />
     <Compile Include="Interfaces\IClub.cs" />
     <Compile Include="Interfaces\ILeague.cs" />

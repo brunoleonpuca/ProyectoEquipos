@@ -12,3 +12,10 @@ C:\Users\Bruno Pucarelli\source\repos\Equipos de Futbol\Equipos de Futbol\obj\De
 C:\Users\Bruno Pucarelli\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.csproj.CoreCompileInputs.cache
 C:\Users\Bruno Pucarelli\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.exe
 C:\Users\Bruno Pucarelli\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.pdb
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\bin\Debug\Equipos de Futbol.exe.config
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\bin\Debug\Equipos de Futbol.exe
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\bin\Debug\Equipos de Futbol.pdb
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.csprojResolveAssemblyReference.cache
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.csproj.CoreCompileInputs.cache
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.exe
+C:\Users\Leon\source\repos\Equipos de Futbol\Equipos de Futbol\obj\Debug\Equipos de Futbol.pdb

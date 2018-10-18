@@ -39,8 +39,7 @@ namespace Equipos_de_Futbol
             }
             while (leagueDecision == 0)
             {
-                Regex r = new Regex("^[0-9]*$"); //Libreria para validar datos
-                
+                //Regex r = new Regex("^[0-9]*$"); //Libreria para validar datos
                 //Habria que llamar a 'r' y con un If validar los datos 
                 Console.WriteLine("Elija Liga ingresando valor y confirme presionando Enter");
                 leagueDecision = Convert.ToInt32(Console.ReadLine());
@@ -51,20 +50,8 @@ namespace Equipos_de_Futbol
                 }
                 else
                 {
-                    switch (leagueDecision)
-                    {
-                        case 1: //AFA SELECTION
-                            leagues = league[leagueDecision - 1];
-                            team = new DataTeamsAFA().FetchAFATeams();
-                            break;
-                        case 2: //BBVA SELECTION
-                            leagues = league[leagueDecision - 1];
-                            team = new DataTeamsBBVA().FetchBBVATeams();
-                            break;
-                        //Agregar con cada liga un 'case' nuevo, es secuencial. En algun momento se puede re-ordenar
-                        default:
-                            break;
-                    }
+                    leagues = league[leagueDecision - 1];
+                    team = leagues.FetchTeams;
                 }
             }
         }

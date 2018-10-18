@@ -12,16 +12,13 @@ namespace Equipos_de_Futbol
         public int AnoNacimiento { get; set; }
         public char Division { get; set; }
         public List<string> Refer { get; set; }
-        public void AñosDelClub()
+
+        public Equipos()
         {
 
         }
-        public Equipos()    
-        {
-                
-        }
 
-        
+
     }
 }
 

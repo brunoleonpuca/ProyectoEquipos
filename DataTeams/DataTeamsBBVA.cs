@@ -45,7 +45,7 @@ namespace Equipos_de_Futbol
 
         } //BASE DE DATOS DE EQUIPOS - BBVA
 
-        public List<Equipos> FetchBBVATeams()
+        public List<Equipos> FetchTeams()
         {
             List<Equipos> equipos = new List<Equipos>
             {

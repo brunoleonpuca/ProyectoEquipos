@@ -51,7 +51,7 @@ namespace Equipos_de_Futbol
         } //BASE DE DATOS DE EQUIPOS - AFA
 
 
-        public List<Equipos> FetchAFATeams()
+        public List<Equipos> FetchTeams()
         {
             List<Equipos> equipos = new List<Equipos>
             {

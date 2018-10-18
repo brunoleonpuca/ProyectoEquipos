@@ -16,7 +16,6 @@ namespace Equipos_de_Futbol
         int AnoNacimiento { get; set; }
         char Division { get; set; }
         List<string> Refer { get; set; }
-        void AñosDelClub();
 
 
 

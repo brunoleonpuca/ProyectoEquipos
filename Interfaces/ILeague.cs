@@ -10,6 +10,6 @@ namespace Equipos_de_Futbol
     {
         string Nombre { get; set; }
         int TeamsQuantity { get; set; }
-        
+        List<Equipos> FetchTeams { get; set; }
     }
 }
