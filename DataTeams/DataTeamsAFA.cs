@@ -11,7 +11,7 @@ namespace Equipos_de_Futbol
         Equipos BocaJuniors = new Equipos();
         Equipos Independiente = new Equipos();
         Equipos Racing = new Equipos();
-        
+        Equipos SanLorenzo = new Equipos();
 
         public DataTeamsAFA()
         {
@@ -48,6 +48,14 @@ namespace Equipos_de_Futbol
             Racing.AnoNacimiento = 1903;
             Racing.Refer = new List<string>() { "R. Centurion", "L. Sigali", "J. Cristaldo" };
 
+            SanLorenzo.Nombre = "Club Atlético San Lorenzo de Almagro";
+            SanLorenzo.Division = 'A';
+            SanLorenzo.DirectorTecnico = "Claudio Biaggio";
+            SanLorenzo.Capitan = "Fabricio Coloccini";
+            SanLorenzo.Estadio = "Pedro Bidegain - El Nuevo Gasometro";
+            SanLorenzo.AnoNacimiento = 1908;
+            SanLorenzo.Refer = new List<string>() { "N. Blandi", "F. Belluschi", "S. Torrico" };
+
         } //BASE DE DATOS DE EQUIPOS - AFA
 
 
@@ -58,7 +66,8 @@ namespace Equipos_de_Futbol
                 RiverPlate,
                 BocaJuniors,
                 Independiente,
-                Racing
+                Racing,
+                SanLorenzo,
             };
 
 
