@@ -48,7 +48,7 @@ namespace Equipos_de_Futbol
             Racing.AnoNacimiento = 1903;
             Racing.Refer = new List<string>() { "R. Centurion", "L. Sigali", "J. Cristaldo" };
 
-        }
+        } //BASE DE DATOS DE EQUIPOS - AFA
 
 
         public List<Equipos> FetchAFATeams()

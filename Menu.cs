@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
 
 namespace Equipos_de_Futbol
 {
@@ -40,7 +39,8 @@ namespace Equipos_de_Futbol
             }
             while (leagueDecision == 0)
             {
-                //Regex r = new Regex("^[a-zA-Z]*$"); Libreria para validar datos
+                Regex r = new Regex("^[0-9]*$"); //Libreria para validar datos
+                
                 //Habria que llamar a 'r' y con un If validar los datos 
                 Console.WriteLine("Elija Liga ingresando valor y confirme presionando Enter");
                 leagueDecision = Convert.ToInt32(Console.ReadLine());
