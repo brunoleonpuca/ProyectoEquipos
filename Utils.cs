@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    class Utils
+    class Utils 
     {
 
         public Utils()
@@ -63,7 +63,7 @@
                     userDecision = 0;
                 }
             }
-            return userDecision;
+            return userDecision-1;
         }
         public int DataMenuVerification()
         {

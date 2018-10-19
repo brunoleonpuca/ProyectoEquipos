@@ -5,18 +5,22 @@ namespace Equipos_de_Futbol
 
     class Menu
     {
+
+        Utils utils = new Utils();
+
         Ligas leagues;
         List<Equipos> team;
         Ligas ligas = new Ligas();
         int teamDecision = 0;
-        Utils utils = new Utils();
-        //1)Un foreach que recorra el listado de objetos e imprima los titulos de los equipos
-        //2)Usuario ingresa valor de acorde al lenght de ese listado
-        //3)Verificar valor de dato ingresado, si True mostrar propiedades, si False: Advertencia
-        //La idea es mostrar el titulo de los equipos que esten cargados en ese momento
-        //En un futuro que tenga ligas y dentro los equipos
-        //Se permite seleccionar la liga/equipos con el numero que se ingresa, verificandolo
-        //En caso de la liga se abre el listado de equipos, en caso del equipo sus estadisticas 
+        /*
+         1)Un foreach que recorra el listado de objetos e imprima los titulos de los equipos
+        *2)Usuario ingresa valor de acorde al lenght de ese listado
+        *3)Verificar valor de dato ingresado, si True mostrar propiedades, si False: Advertencia
+        *La idea es mostrar el titulo de los equipos que esten cargados en ese momento
+        *En un futuro que tenga ligas y dentro los equipos
+        *Se permite seleccionar la liga/equipos con el numero que se ingresa, verificandolo
+        En caso de la liga se abre el listado de equipos, en caso del equipo sus estadisticas
+        */
         public Menu()
         {
             Console.WriteLine("---------BASE DE DATOS DE EQUIPOS----------");
@@ -54,7 +58,7 @@ namespace Equipos_de_Futbol
 
         public void TeamSelection()
         {
-            int teamDecision = utils.DataTeamVerification(team);
+            teamDecision = utils.DataTeamVerification(team);
         }
 
         public void ShowTeam()
@@ -85,9 +89,11 @@ namespace Equipos_de_Futbol
             {
                 case 1:
                     userSelection = 1;
+                    Console.Clear();
                     break;
                 case 2:
                     userSelection = 2;
+                    Console.Clear();
                     break;
                 case 3:
                     userSelection = 0;

@@ -16,10 +16,11 @@
 
         public List<Ligas> AddTeams() //BASE DE DATOS DE LIGAS
         {
+
             Ligas AFA = new Ligas();
             Ligas BBVA = new Ligas();
             Ligas PREMIER = new Ligas();
-            
+
             AFA.Nombre = "AFA - Superliga argentina";
             AFA.TeamsQuantity = new DataTeamsAFA().FetchTeams().Count;
             AFA.FetchTeams = new DataTeamsAFA().FetchTeams();
