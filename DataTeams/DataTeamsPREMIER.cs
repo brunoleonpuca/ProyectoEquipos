@@ -19,9 +19,7 @@ namespace Equipos_de_Futbol
             ManchesterUnited.Estadio = "Old Trafford";
             ManchesterUnited.AnoNacimiento = 1878;
             ManchesterUnited.Refer = new List<string>() { "Paul Pogba", "R. Lukaku", "David De Gea" };
-
-
-
+            
             Chelsea.Nombre = "Chelsea Football Club";
             Chelsea.Division = 'A';
             Chelsea.DirectorTecnico = "Maurizio Sarri";
