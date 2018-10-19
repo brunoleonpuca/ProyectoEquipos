@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-
-
 namespace Equipos_de_Futbol
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+
     class Menu
     {
 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Equipos_de_Futbol
+﻿namespace Equipos_de_Futbol
 {
+    using System;
+    using System.Collections.Generic;
+    
     class DataTeamsBBVA
     {
 
