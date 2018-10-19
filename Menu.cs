@@ -78,39 +78,26 @@ namespace Equipos_de_Futbol
 
         public int Continue()
         {
-            int loop = 0;
             int userSelection = 0;
-            Console.WriteLine("\nQue desea hacer?");
-            Console.WriteLine("1.Elegir otra Liga");
-            Console.WriteLine("2.Elegir otro Equipo");
-            Console.WriteLine("3.Salir");
-            while (userSelection == 0)
+
+            userSelection = utils.DataMenuVerification();
+            switch (userSelection)
             {
-                userSelection = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                switch (userSelection)
-                {
-                    case 1:
-                        break;
-                    case 2: //Hay que crear una clase Utils para manejar el programa
-                        MostrarMenu();
-                        TeamSelection();
-                        ShowTeam();
-                        userSelection = 0;
-                        break;
-                    case 3:
-                        loop = 1;
-                        break;
-                    default:
-                        Console.WriteLine("Dato ingresado no valido");
-                        userSelection = 0;
-                        break;
-                }
-
+                case 1:
+                    userSelection = 1;
+                    break;
+                case 2:
+                    userSelection = 2;
+                    break;
+                case 3:
+                    userSelection = 0;
+                    Console.WriteLine("------------FIN DEL PROGRAMA------------\nEnter para Finalizar...");
+                    Console.ReadKey();
+                    break;
             }
-
-            return loop;
+            return userSelection;
         }
+        
 
 
     }

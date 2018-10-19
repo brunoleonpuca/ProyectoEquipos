@@ -5,15 +5,24 @@
     {
         static void Main(string[] args)
         {
-            int Loop = 0;
-            
-
+            int loop = 1;
             Menu menu = new Menu();
-            menu.LeagueSelection();
-            menu.MostrarMenu();
-            menu.TeamSelection();
-            menu.ShowTeam();
-            Loop = menu.Continue();
+            while (loop != 0)
+            {
+                if(loop == 1)
+                {
+                    menu.LeagueSelection();
+                }
+                loop = 2;
+                if(loop == 2)
+                {
+                    menu.MostrarMenu();
+                    menu.TeamSelection();
+                    menu.ShowTeam();
+                } 
+                loop = menu.Continue();
+            }
+           
 
 
         }
