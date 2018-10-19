@@ -2,14 +2,14 @@ namespace Equipos_de_Futbol
 {
     using System;
     using System.Collections.Generic;
-    using System.Text.RegularExpressions;
 
     class Menu
     {
-
         Ligas leagues;
         List<Equipos> team;
         Ligas ligas = new Ligas();
+        int teamDecision = 0;
+        Utils utils = new Utils();
         //1)Un foreach que recorra el listado de objetos e imprima los titulos de los equipos
         //2)Usuario ingresa valor de acorde al lenght de ese listado
         //3)Verificar valor de dato ingresado, si True mostrar propiedades, si False: Advertencia
@@ -26,41 +26,17 @@ namespace Equipos_de_Futbol
 
         public void LeagueSelection()
         {
-
             List<Ligas> league = ligas.AddTeams();
-            int leagueDecision = 0;
             int leagueCounter = 1;
-            bool status = false;
             foreach (var leagues in league)
             {
                 Console.WriteLine(leagueCounter + " - " + leagues.Nombre);
                 Console.WriteLine(leagues.TeamsQuantity + " equipos disponibles\n");
                 leagueCounter++;
             }
-            while (!status)
-            {
-                Console.WriteLine("Elija Liga ingresando valor y confirme presionando Enter");
-                status = int.TryParse(Console.ReadLine(), out leagueDecision);
-                if (status)
-                { 
-                    if (leagueDecision > league.Count || leagueDecision < 0)
-                    {
-                        Console.WriteLine("Dato ingresado no valido");
-                        leagueDecision = 0;
-                        status = false;
-                    }
-                    else
-                    {
-                        leagues = league[leagueDecision - 1];
-                        team = leagues.FetchTeams;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Dato ingresado no valido");
-                    leagueDecision = 0;
-                }
-            }   
+            leagues = utils.DataLeagueVerification(league, leagues, team);
+            team = leagues.FetchTeams;
+
         }
 
         public void MostrarMenu()
@@ -76,26 +52,13 @@ namespace Equipos_de_Futbol
             }
         }
 
-
-        public int VerifyValue()
+        public void TeamSelection()
         {
-            int teamDecision = 0;
-            while (teamDecision == 0)
-            {
-                Console.WriteLine("Elija equipo ingresando valor y confirme presionando Enter");
-                teamDecision = Convert.ToInt32(Console.ReadLine());
-                if (teamDecision > team.Count || teamDecision < 0)
-                {
-                    Console.WriteLine("Dato ingresado no valido");
-                    teamDecision = 0;
-                }
-            }
-            return teamDecision - 1;
+            int teamDecision = utils.DataTeamVerification(team);
         }
 
-        public void ShowTeam(int teamDecision)
+        public void ShowTeam()
         {
-
             Console.WriteLine("Nombre: " + team[teamDecision].Nombre);
             Console.WriteLine("Estadio: " + team[teamDecision].Estadio);
             Console.WriteLine("Director Tecnico: " + team[teamDecision].DirectorTecnico);
@@ -131,8 +94,8 @@ namespace Equipos_de_Futbol
                         break;
                     case 2: //Hay que crear una clase Utils para manejar el programa
                         MostrarMenu();
-                        int teamDecision = VerifyValue();
-                        ShowTeam(teamDecision);
+                        TeamSelection();
+                        ShowTeam();
                         userSelection = 0;
                         break;
                     case 3:

@@ -1,14 +1,21 @@
 ﻿namespace Equipos_de_Futbol
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            Utils utils = new Utils();
-           
+            int Loop = 0;
+            
+
+            Menu menu = new Menu();
+            menu.LeagueSelection();
+            menu.MostrarMenu();
+            menu.TeamSelection();
+            menu.ShowTeam();
+            Loop = menu.Continue();
+
+
         }
     }
 }
