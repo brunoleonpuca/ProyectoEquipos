@@ -30,29 +30,37 @@ namespace Equipos_de_Futbol
             List<Ligas> league = ligas.AddTeams();
             int leagueDecision = 0;
             int leagueCounter = 1;
+            bool status = false;
             foreach (var leagues in league)
             {
                 Console.WriteLine(leagueCounter + " - " + leagues.Nombre);
                 Console.WriteLine(leagues.TeamsQuantity + " equipos disponibles\n");
                 leagueCounter++;
             }
-            while (leagueDecision == 0)
+            while (!status)
             {
-                //Regex r = new Regex("^[0-9]*$"); //Libreria para validar datos
-                //Habria que llamar a 'r' y con un If validar los datos 
                 Console.WriteLine("Elija Liga ingresando valor y confirme presionando Enter");
-                leagueDecision = Convert.ToInt32(Console.ReadLine());
-                if (leagueDecision > league.Count || leagueDecision < 0)
+                status = int.TryParse(Console.ReadLine(), out leagueDecision);
+                if (status)
+                { 
+                    if (leagueDecision > league.Count || leagueDecision < 0)
+                    {
+                        Console.WriteLine("Dato ingresado no valido");
+                        leagueDecision = 0;
+                        status = false;
+                    }
+                    else
+                    {
+                        leagues = league[leagueDecision - 1];
+                        team = leagues.FetchTeams;
+                    }
+                }
+                else
                 {
                     Console.WriteLine("Dato ingresado no valido");
                     leagueDecision = 0;
                 }
-                else
-                {
-                    leagues = league[leagueDecision - 1];
-                    team = leagues.FetchTeams;
-                }
-            }
+            }   
         }
 
         public void MostrarMenu()
