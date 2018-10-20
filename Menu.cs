@@ -90,6 +90,8 @@ namespace Equipos_de_Futbol
                 case 1:
                     userSelection = 1;
                     Console.Clear();
+                    Console.WriteLine("---------BASE DE DATOS DE EQUIPOS----------");
+                    Console.WriteLine("\nELIJA LIGA PARA MOSTRAR DATOS");
                     break;
                 case 2:
                     userSelection = 2;
